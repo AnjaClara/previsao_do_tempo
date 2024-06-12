@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 from datetime import datetime
 import requests
+from unidecode import unidecode
 
 API_KEY = "6d6e9292b0f133dbdc75754bc58cc44f"  
 
@@ -11,10 +12,12 @@ class OpenWeatherMapAPI:
       self.base_url = "https://api.openweathermap.org/data/2.5"
 
   def buscar_previsao_atual_api(self, cidade):
+    cidade = unidecode(cidade)
     link = f"{self.base_url}/weather?q={cidade}&appid={self.api_key}"
     return requests.get(link).json()
 
   def buscar_previsao_periodo_api(self, cidade, data_inicio, data_fim):
+    cidade = unidecode(cidade)
     link = f"{self.base_url}/forecast?q={cidade}&appid={self.api_key}"
     resposta = requests.get(link).json()
     previsoes = resposta.get("list", [])

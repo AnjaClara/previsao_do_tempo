@@ -69,11 +69,7 @@ class LoginCadastro:
   def abrir_janela_previsao(self):
     root_previsao = tk.Toplevel()  # Criar uma nova janela para a previsão
     previsao.PrevisaoTempoApp(root_previsao, previsao.OpenWeatherMapAPI(previsao.API_KEY))  # Inicializar a aplicação de previsão
-    root_previsao.protocol("WM_DELETE_WINDOW", self.voltar_janela_inicial)  # Definir protocolo para fechar a janela
-
-    def voltar_janela_inicial(self):
-      self.root.deiconify()  # Tornar visível a janela inicial
-      root_previsao.destroy()  # Destruir a janela de previsão
+    root_previsao.protocol("WM_DELETE_WINDOW")  # Definir protocolo para fechar a janela
 
   def janela_cadastro(self):
     cadastro = tk.Toplevel()
