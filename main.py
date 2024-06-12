@@ -1,7 +1,7 @@
 import tkinter as tk
 from login import LoginCadastro
-import previsao
 
+# Herança
 class MainApp(LoginCadastro):
     def __init__(self, root):
         super().__init__(root)
