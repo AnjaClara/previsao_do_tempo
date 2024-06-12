@@ -1,4 +1,7 @@
-INSTALAR: pip install requests, pip install unidecode, pip install python-dotenv
+Você deve instalar: 
+  - pip install requests
+  - pip install unidecode
+  - pip install python-dotenv
 
 Ao realizar o clone você deve criar uma conta em "https://openweathermap.org/" e seguir os seguintes passos:
 
