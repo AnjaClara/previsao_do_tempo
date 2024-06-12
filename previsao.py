@@ -3,8 +3,14 @@ from tkinter import messagebox
 from datetime import datetime
 import requests
 from unidecode import unidecode
+from dotenv import load_dotenv
+import os
 
-API_KEY = "6d6e9292b0f133dbdc75754bc58cc44f"  
+# Carrega as variáveis de ambiente do arquivo .env
+load_dotenv()
+
+# Obtém a chave da API do ambiente
+API_KEY = os.getenv('API_KEY')
 
 class OpenWeatherMapAPI:
   def __init__(self, api_key):
